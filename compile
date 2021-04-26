@@ -1,3 +1,19 @@
 #!/bin/bash
 
-deno compile --unstable --allow-read --allow-write -o dist/bglcares ./src/mod.ts
+deno compile \
+  --unstable \
+  --allow-read \
+  --allow-write \
+  --lite \
+  -o dist/bglcares.linux \
+  --target x86_64-unknown-linux-gnu \
+  ./src/mod.ts
+
+deno compile \
+  --unstable \
+  --allow-read \
+  --allow-write \
+  --lite \
+  -o dist/bglcares.mac \
+  --target x86_64-apple-darwin \
+  ./src/mod.ts

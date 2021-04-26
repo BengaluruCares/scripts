@@ -20,7 +20,9 @@ jobs:
       - name: Create Github Release
         uses: softprops/action-gh-release@v1
         with:
-          files: dist/bglcares
+          files: |
+            dist/bglcares.linux
+            dist/bglcares.mac
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Run latest-tag
